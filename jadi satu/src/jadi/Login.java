@@ -79,10 +79,20 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JadiGUI_Pilihan pilih = new JadiGUI_Pilihan();
-        Login log = new Login();
-        log.setVisible(false);
-        pilih.setVisible(true);
+        String s = evt.getActionCommand();
+        if(s.equals("Login")){
+            String username = jTextField1.getText();
+            String password = jPasswordField1.getText();
+            if(username.compareTo("informatika")==0&&password.compareTo("kelasc")==0){
+                JadiGUI_Pilihan pilih = new JadiGUI_Pilihan();
+                Login log = new Login();
+                log.setVisible(true);
+                log.jLabel1.setText("Berhasil Login");
+                pilih.setVisible(true);
+            }else{
+                jLabel1.setText("Username dan Password anda salah");
+            }
+        }
         
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
